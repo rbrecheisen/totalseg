@@ -11,7 +11,7 @@ def dcm2nii():
         print('dcm2nii() output already exists')
 
 def nii2seg():
-    pass
+    os.system('TotalSegmentator')
 
 def main():
     dcm2nii()
