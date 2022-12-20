@@ -11,7 +11,10 @@ def dcm2nii():
         print('dcm2nii() output already exists')
 
 def nii2seg():
-    os.system('TotalSegmentator')
+    source_path = os.path.join(TMP_DIR, 'my_file.nii.gz')
+    target_path = os.path.join(TMP_DIR, 'seg')
+    os.makedirs(target_path, exist_ok=True)
+    os.system(f'TotalSegmentator -i {source_path} -o {target_path}')
 
 def main():
     dcm2nii()
